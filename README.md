@@ -83,7 +83,7 @@ A collection of useful Django snippets for Zed.
 
 ---
 
-## 🧾 Forms
+## Forms
 
 | Prefix | Description |
 | ------- | ------------ |
