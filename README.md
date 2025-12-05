@@ -106,3 +106,53 @@ A collection of useful Django snippets for Zed.
 | `djformsave` | Overrides `save()` method for ModelForm customization. |
 | `djformset` | Creates a `modelformset_factory` for multiple objects. |
 | `djinlineformset` | Creates an `inlineformset_factory` for parent-child models. |
+
+---
+
+## Template Tags
+
+For the template tags to be suggested, you need to have the [Django extension](https://github.com/joshuadavidthomas/zed-django) installed.
+
+Currently, we're using the template tags available in Django 5.2, so the syntax may vary depending on your Django version.
+
+If they're still not appearing after installing the extension, add the following to your zed's `settings.json` file (or refer to their docs for more info):
+
+```
+{
+  "file_types": {
+    "Django": ["**/templates/**/*.html"]
+  }
+}
+```
+
+| Prefix | Description |
+| ------- | ------------ |
+| `autoescape` | Controls the current auto-escaping behavior. |
+| `block` | Adds a block with a name. |
+| `comment` | Ignores everything between the tags. |
+| `csrf_token` | Inserts CSRF token for forms. |
+| `cycle` | Cycles among values in a loop. |
+| `debug` | Outputs debugging information. |
+| `extends` | Extends a parent template. |
+| `filter` | Filters the contents through one or more filters. |
+| `firstof` | Outputs the first variable that is not False. |
+| `for` | Loops over each item in an array. |
+| `for_empty` | For loop with empty clause. |
+| `if` | Evaluates a variable and outputs content if true. |
+| `if_else` | If statement with else clause. |
+| `if_elif_else` | If statement with elif and else clauses. |
+| `ifchanged` | Checks if a value has changed from the last iteration. |
+| `include` | Loads a template and renders it with the current context. |
+| `include_with` | Includes a template with additional context. |
+| `load` | Loads a custom template tag library. |
+| `lorem` | Displays random lorem ipsum text. |
+| `now` | Displays the current date and/or time. |
+| `regroup` | Regroups a list by a common attribute. |
+| `resetcycle` | Resets a previous cycle. |
+| `spaceless` | Removes whitespace between HTML tags. |
+| `static` | Links to static files. |
+| `templatetag` | Outputs template syntax characters. |
+| `url` | Returns an absolute path reference. |
+| `verbatim` | Stops the template engine from rendering the contents. |
+| `widthratio` | Calculates ratio of a value to a maximum value. |
+| `with` | Caches a complex variable under a simpler name. |
