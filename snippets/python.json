@@ -213,7 +213,7 @@
       "class ${1:ModelName}ListView(ListView):",
       "    model = ${2:$1}",
       "    template_name = \"${3:app_name/$1_list.html}\"",
-      "    context_object_name = \"${4:${1/(.*)/${1:/downcase}/}_list}\"",
+      "    context_object_name = \"${4:${1:ModelName}_list}\"",
       "    paginate_by = ${5:10}",
       "    $0"
     ],
@@ -225,7 +225,7 @@
       "class ${1:ModelName}DetailView(DetailView):",
       "    model = ${2:$1}",
       "    template_name = \"${3:app_name/$1_detail.html}\"",
-      "    context_object_name = \"${4:${1/(.*)/${1:/downcase}/}}\"",
+      "    context_object_name = \"${4:$1}\"",
       "    $0"
     ],
     "description": "DetailView"
@@ -429,7 +429,7 @@
   "re_path": {
     "prefix": "djrepath",
     "body": [
-      "re_path(r\"^${1:pattern}$\", ${2:views}.${3:view_name}, name=\"${4:name}\"),$0"
+      "re_path(r\"^${1:pattern}\\$\", ${2:views}.${3:view_name}, name=\"${4:name}\"),$0"
     ],
     "description": "Regex URL path"
   },
