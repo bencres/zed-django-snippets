@@ -1,0 +1,158 @@
+{
+  "autoescape": {
+    "description": "Controls the current auto-escaping behavior",
+    "body": [
+      "{% autoescape ${1|on,off|}",
+      "${2:Content}",
+      "{% endautoescape %}"
+    ]
+  },
+  "block": {
+    "description": "Adds a block with a name",
+    "body": [
+      "{% block ${1:BlockName} %}",
+      "${2:BlockContent}",
+      "{% endblock ${1:BlockName} %}"
+    ]
+  },
+  "comment": {
+    "description": "Ignores everything between the tags",
+    "body": ["{% comment %}", "${1:Comment}", "{% endcomment %}"]
+  },
+  "csrf_token": {
+    "description": "Inserts CSRF token for forms",
+    "body": "{% csrf_token %}"
+  },
+  "cycle": {
+    "description": "Cycles among values in a loop",
+    "body": "{% cycle ${1:'odd'} ${2:'even'} %}"
+  },
+  "debug": {
+    "description": "Outputs debugging information",
+    "body": "{% debug %}"
+  },
+  "extends": {
+    "description": "Extends a parent template",
+    "body": "{% extends '${1:base.html}' %}"
+  },
+  "filter": {
+    "description": "Filters the contents through one or more filters",
+    "body": ["{% filter ${1:lower} %}", "${2:Content}", "{% endfilter %}"]
+  },
+  "firstof": {
+    "description": "Outputs the first variable that is not False",
+    "body": "{% firstof ${1:var1} ${2:var2} ${3:var3} %}"
+  },
+  "for": {
+    "description": "Loops over each item in an array",
+    "body": [
+      "{% for ${1:item} in ${2:items} %}",
+      "${3:{{ ${1:item} \\}\\}}",
+      "{% endfor %}"
+    ]
+  },
+  "for_empty": {
+    "description": "For loop with empty clause",
+    "body": [
+      "{% for ${1:item} in ${2:items} %}",
+      "${3:{{ ${1:item} \\}\\}}",
+      "{% empty %}",
+      "${4:No items}",
+      "{% endfor %}"
+    ]
+  },
+  "if": {
+    "description": "Evaluates a variable and outputs content if true",
+    "body": ["{% if ${1:condition} %}", "${2:Content}", "{% endif %}"]
+  },
+  "if_else": {
+    "description": "If statement with else clause",
+    "body": [
+      "{% if ${1:condition} %}",
+      "${2:Content}",
+      "{% else %}",
+      "${3:Fallback}",
+      "{% endif %}"
+    ]
+  },
+  "if_elif_else": {
+    "description": "If statement with elif and else clauses",
+    "body": [
+      "{% if ${1:condition} %}",
+      "${2:Content}",
+      "{% elif ${3:other_condition} %}",
+      "${4:Other content}",
+      "{% else %}",
+      "${5:Fallback}",
+      "{% endif %}"
+    ]
+  },
+  "ifchanged": {
+    "description": "Checks if a value has changed from the last iteration",
+    "body": [
+      "{% ifchanged ${1:variable} %}",
+      "${2:Content}",
+      "{% endifchanged %}"
+    ]
+  },
+  "include": {
+    "description": "Loads a template and renders it with the current context",
+    "body": "{% include '${1:template.html}' %}"
+  },
+  "include_with": {
+    "description": "Includes a template with additional context",
+    "body": "{% include '${1:template.html}' with ${2:var}=${3:value} %}"
+  },
+  "load": {
+    "description": "Loads a custom template tag library",
+    "body": "{% load ${1:static} %}"
+  },
+  "lorem": {
+    "description": "Displays random lorem ipsum text",
+    "body": "{% lorem ${1:count} ${2|w,p,b|} %}"
+  },
+  "now": {
+    "description": "Displays the current date and/or time",
+    "body": "{% now '${1:Y-m-d H:i:s}' %}"
+  },
+  "regroup": {
+    "description": "Regroups a list by a common attribute",
+    "body": "{% regroup ${1:items} by ${2:attribute} as ${3:grouped_list} %}"
+  },
+  "resetcycle": {
+    "description": "Resets a previous cycle",
+    "body": "{% resetcycle %}"
+  },
+  "spaceless": {
+    "description": "Removes whitespace between HTML tags",
+    "body": ["{% spaceless %}", "${1:Content}", "{% endspaceless %}"]
+  },
+  "static": {
+    "description": "Links to static files",
+    "body": "{% static '${1:path/to/file}' %}"
+  },
+  "templatetag": {
+    "description": "Outputs template syntax characters",
+    "body": "{% templatetag ${1|openblock,closeblock,openvariable,closevariable,openbrace,closebrace,opencomment,closecomment|} %}"
+  },
+  "url": {
+    "description": "Returns an absolute path reference",
+    "body": "{% url '${1:view_name}' ${2:args} %}"
+  },
+  "verbatim": {
+    "description": "Stops the template engine from rendering the contents",
+    "body": ["{% verbatim %}", "${1:{{raw_syntax\\}\\}}", "{% endverbatim %}"]
+  },
+  "widthratio": {
+    "description": "Calculates ratio of a value to a maximum value",
+    "body": "{% widthratio ${1:current_value} ${2:max_value} ${3:max_width} %}"
+  },
+  "with": {
+    "description": "Caches a complex variable under a simpler name",
+    "body": [
+      "{% with ${1:variable}=${2:value} %}",
+      "${3:{{ ${1:variable} \\}\\}}",
+      "{% endwith %}"
+    ]
+  }
+}
